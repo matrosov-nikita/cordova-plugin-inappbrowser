@@ -150,7 +150,7 @@
             userAgent = overrideUserAgent;
         }
         if(appendUserAgent){
-            userAgent = [userAgent stringByAppendingString: appendUserAgent];
+            userAgent = [NSString stringWithFormat:@"%@ %@", userAgent, appendUserAgent];
         }
         self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:userAgent prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
         self.inAppBrowserViewController.navigationDelegate = self;
